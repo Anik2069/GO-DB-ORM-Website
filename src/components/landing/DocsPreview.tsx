@@ -4,53 +4,64 @@ import { Book, Box, Search, GitBranch, FileText } from "lucide-react";
 import { CodeBlock } from "./CodeBlock";
 
 const sections = {
-  Installation: {
+  "Quick Start": {
     icon: Box,
-    body: `# Install the package
-go get github.com/Anik2069/go-db-orm
+    body: `# 1. Install CLI
+go install github.com/Anik2069/go-db-orm/cmd/godborm@latest
 
-# Initialize a connection
-import "github.com/Anik2069/go-db-orm/db"
+# 2. Init Project
+godborm init
 
-conn, err := db.Open("postgres", "postgres://localhost/myapp")`,
+# 3. Migrate & Generate
+godborm migrate
+godborm generate --package main`,
     lang: "bash",
   },
-  "Model creation": {
+  "Schema Syntax": {
     icon: FileText,
-    body: `type User struct {
-    ID        int64  \`db:"id,pk"\`
-    Email     string \`db:"email,unique"\`
-    Name      string \`db:"name"\`
-    CreatedAt time.Time
+    body: `model User {
+    id         int      @id
+    name       string
+    email      string
+    city       string?  // Nullable field
+    
+    created_at datetime // CreatedAt in Go
 }
 
-db.Register(&User{})`,
-    lang: "go",
+model Post {
+    id      int      @id
+    title   string
+    user_id int      @foreign(User.id)
+}`,
+    lang: "prisma",
   },
-  "Query examples": {
+  "Querying": {
     icon: Search,
-    body: `// Find one
-var u User
-db.Model(&User{}).Where("email = ?", e).First(&u)
+    body: `// Select specific fields
+client.Select("name", "email").FindAll(&users)
 
-// Aggregations
-count, _ := db.Model(&User{}).Where("status = ?", "active").Count()`,
+// Load relations with filters
+client.Select("invoice_number").
+    Include("Items:item_name,quantity", "User").
+    FindAll(&invoices)`,
     lang: "go",
   },
-  "Migration setup": {
+  "Raw SQL": {
     icon: GitBranch,
-    body: `// Auto-migrate from struct definitions
-err := db.AutoMigrate(&User{}, &Order{}, &Product{})
+    body: `// Scan into structs
+var users []User
+client.Raw("SELECT * FROM users").Scan(&users)
 
-// Or generate SQL files
-db.GenerateMigration("add_users_table")`,
+// Scan single value
+var count int
+client.Raw("SELECT COUNT(*) FROM users").Scan(&count)`,
     lang: "go",
   },
 };
 
 export function DocsPreview() {
   const keys = Object.keys(sections) as (keyof typeof sections)[];
-  const [active, setActive] = useState<keyof typeof sections>("Installation");
+  const [active, setActive] = useState<keyof typeof sections>("Quick Start");
   const current = sections[active];
 
   return (

@@ -5,16 +5,15 @@ import {
 } from "lucide-react";
 
 const features = [
-  { icon: Feather, title: "Lightweight Architecture", desc: "Minimal abstractions, tiny footprint, no reflection-heavy magic." },
-  { icon: Wand2, title: "Fluent Query Builder", desc: "Chainable, expressive API that reads like SQL but with type safety." },
-  { icon: GitBranch, title: "Auto Migration", desc: "Diff your structs against the live schema and migrate with one call." },
-  { icon: Database, title: "PostgreSQL Support", desc: "First-class Postgres driver with JSONB, arrays, and CTE support." },
-  { icon: Database, title: "MySQL Support", desc: "Full MySQL 5.7+ compatibility with prepared statement caching." },
-  { icon: Shield, title: "Type-Safe Models", desc: "Compile-time checks for fields, relations, and query parameters." },
-  { icon: Link2, title: "Relationship Handling", desc: "HasOne, HasMany, BelongsTo, ManyToMany — eager and lazy loading." },
-  { icon: Zap, title: "High Performance", desc: "Benchmarks 2-3x faster than reflection-based ORMs." },
-  { icon: Sparkles, title: "Clean API Design", desc: "Idiomatic Go. No interface{} soup, no struct tag overload." },
-  { icon: Rocket, title: "Production Ready", desc: "Battle-tested in high-traffic services. Connection pooling included." },
+  { icon: Wand2, title: "Schema-First Workflow", desc: "Define models in simple .schema files, inspired by Prisma." },
+  { icon: GitBranch, title: "Auto-Migrations", desc: "Detect changes and generate versioned SQL migration files automatically." },
+  { icon: Database, title: "Migration History", desc: "Tracks applied migrations in a database table for team safety." },
+  { icon: Shield, title: "Type-Safe Models", desc: "Generates Go structs with appropriate types and nullable pointers." },
+  { icon: Sparkles, title: "Smart Naming", desc: "Automatic snake_case pluralization in DB and PascalCase in Go." },
+  { icon: Link2, title: "Foreign Keys", desc: "Simple @foreign(Table.column) syntax for database relationships." },
+  { icon: Zap, title: "Filtered Includes", desc: "Control exactly which fields are fetched for related models." },
+  { icon: Gauge, title: "Auto-Linking", desc: "Automatically fetches required join keys for relations if missing." },
+  { icon: Feather, title: "Clean JSON", desc: "Respects Select() by hiding internal join keys from final JSON." },
 ];
 
 export function Features() {

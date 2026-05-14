@@ -3,51 +3,56 @@ import { motion, AnimatePresence } from "framer-motion";
 import { CodeBlock } from "./CodeBlock";
 
 const tabs = {
-  Insert: `user := &User{Name: "Ada", Status: "active"}
+  Schema: `model User {
+    id         int      @id
+    name       string
+    email      string
+    city       string?  // Nullable field (*string in Go)
+    
+    created_at datetime // CreatedAt in Go
+}
 
-err := db.Model(user).Create()
-// INSERT INTO users (name, status) VALUES ($1, $2)`,
+model Post {
+    id      int      @id
+    title   string
+    user_id int      @foreign(User.id)
+}`,
 
-  Find: `var users []User
+  Queries: `var users []User
+// Only fetches name and email
+client.Select("name", "email").FindAll(&users)`,
 
-err := db.Model(&User{}).
-    Where("status = ?", "active").
-    OrderBy("created_at DESC").
-    Limit(10).
-    Find(&users)`,
+  Relations: `var invoices []Invoices
+// Automatically fetches 'id' and 'user_id' internally 
+// to link Items and User
+client.Select("invoice_number").
+    Include("Items", "User").
+    FindAll(&invoices)`,
 
-  Update: `err := db.Model(&User{}).
-    Where("id = ?", 42).
-    Update(map[string]any{
-        "status": "archived",
-    })`,
+  "Filtered Relations": `// Only fetch item_name and quantity for the Items relation
+client.Select("invoice_number").
+    Include("Items:item_name,quantity", "User").
+    FindAll(&invoices)`,
 
-  Delete: `err := db.Model(&User{}).
-    Where("status = ?", "inactive").
-    Delete()
-// DELETE FROM users WHERE status = $1`,
+  "Raw SQL": `// Fetch into a slice of structs
+var users []User
+client.Raw("SELECT * FROM users WHERE email LIKE $1", "%@gmail.com").
+    Scan(&users)
 
-  Joins: `var rows []OrderWithUser
+// Execute a command (Update/Delete)
+client.Raw("DELETE FROM users WHERE id = $1", 123).Exec()`,
 
-err := db.Model(&Order{}).
-    Join("LEFT JOIN users ON users.id = orders.user_id").
-    Select("orders.*, users.name as user_name").
-    Where("orders.total > ?", 100).
-    Find(&rows)`,
-
-  Transactions: `err := db.Transaction(func(tx *db.Tx) error {
-    if err := tx.Model(&order).Create(); err != nil {
-        return err
-    }
-    return tx.Model(&Inventory{}).
-        Where("sku = ?", order.SKU).
-        Update(map[string]any{"qty": gorm.Expr("qty - ?", 1)})
-})`,
+  Config: `{
+    "schema": "./schema",
+    "migrations": "./migrations",
+    "driver": "postgres",
+    "dsn": "postgresql://user:pass@localhost:5432/db"
+}`,
 };
 
 export function Examples() {
   const keys = Object.keys(tabs) as (keyof typeof tabs)[];
-  const [active, setActive] = useState<keyof typeof tabs>("Find");
+  const [active, setActive] = useState<keyof typeof tabs>("Schema");
 
   return (
     <section id="examples" className="relative py-32">

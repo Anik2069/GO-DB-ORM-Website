@@ -2,23 +2,17 @@ import { motion } from "framer-motion";
 import { ArrowRight, Github, Star, Sparkles } from "lucide-react";
 import { CodeBlock } from "./CodeBlock";
 
-const sample = `package main
+const sample = `// 1. Define your Schema (schema/user.schema)
+// model User { id int @id, name string, email string }
 
-import "github.com/Anik2069/go-db-orm/db"
+// 2. Generate type-safe Go models
+// godborm generate
 
-type User struct {
-    ID        int64
-    Name      string
-    Status    string
-    CreatedAt time.Time
-}
-
-// Fluent, type-safe queries
-users, err := db.Model(&User{}).
-    Where("status = ?", "active").
-    OrderBy("created_at DESC").
-    Limit(10).
-    Find()
+// 3. Query with smart relation loading
+var users []User
+client.Select("name", "email").
+    Include("Posts:title,created_at").
+    FindAll(&users)
 `;
 
 export function Hero() {
