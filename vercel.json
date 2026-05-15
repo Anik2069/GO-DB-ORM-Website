@@ -1,5 +1,11 @@
-// Source - https://stackoverflow.com/a/79371091
-// Posted by Aniket Kumar, modified by community. See post 'Timeline' for change history
+// Source - https://stackoverflow.com/a/78585333
+// Posted by ha36d
 // Retrieved 2026-05-16, License - CC BY-SA 4.0
-
-{ "rewrites": [{ "source": "/(.*)", "destination": "/" }] }
+{
+    "rewrites": [
+        {
+            "source": "/(.*)",
+            "destination": "/"
+        }
+    ]
+}
