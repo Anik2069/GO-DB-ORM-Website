@@ -4,11 +4,7 @@ import {
   Link,
   createRootRouteWithContext,
   useRouter,
-  HeadContent,
-  Scripts,
 } from "@tanstack/react-router";
-
-import appCss from "../styles.css?url";
 
 function NotFoundComponent() {
   return (
@@ -68,49 +64,10 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
 }
 
 export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
-  head: () => ({
-    meta: [
-      { charSet: "utf-8" },
-      { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Go DB ORM" },
-      { name: "description", content: "A modern, developer-focused landing page for Go DB ORM, an open-source Golang ORM library." },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Go DB ORM" },
-      { property: "og:description", content: "A modern, developer-focused landing page for Go DB ORM, an open-source Golang ORM library." },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary" },
-      { name: "twitter:site", content: "@Lovable" },
-      { name: "twitter:title", content: "Go DB ORM" },
-      { name: "twitter:description", content: "A modern, developer-focused landing page for Go DB ORM, an open-source Golang ORM library." },
-      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/72283613-9f20-46c7-8f85-9a7069069159/id-preview-63f09005--d2ec97b8-688d-45fd-8341-0d3de2e48a47.lovable.app-1778735228188.png" },
-      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/72283613-9f20-46c7-8f85-9a7069069159/id-preview-63f09005--d2ec97b8-688d-45fd-8341-0d3de2e48a47.lovable.app-1778735228188.png" },
-    ],
-    links: [
-      {
-        rel: "stylesheet",
-        href: appCss,
-      },
-    ],
-  }),
-  shellComponent: RootShell,
   component: RootComponent,
   notFoundComponent: NotFoundComponent,
   errorComponent: ErrorComponent,
 });
-
-function RootShell({ children }: { children: React.ReactNode }) {
-  return (
-    <html lang="en">
-      <head>
-        <HeadContent />
-      </head>
-      <body>
-        {children}
-        <Scripts />
-      </body>
-    </html>
-  );
-}
 
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
