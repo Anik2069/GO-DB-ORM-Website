@@ -22,7 +22,7 @@ function Cell({ v, primary }: { v: Cell; primary?: boolean }) {
 
 export function Compare() {
   return (
-    <section id="compare" className="relative py-20">
+    <section id="compare" className="relative py-12">
       <div className="absolute inset-x-0 top-1/2 -translate-y-1/2 h-[400px] bg-gradient-to-r from-primary/10 via-secondary/10 to-transparent blur-3xl -z-10" />
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-8 sm:mb-12">

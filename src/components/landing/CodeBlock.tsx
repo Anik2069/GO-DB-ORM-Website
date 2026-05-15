@@ -92,10 +92,10 @@ export function CodeBlock({
           {lines.slice(0, shown).map((line, i) => (
             <motion.div
               key={i}
-              initial={animate ? { opacity: 0, x: -8 } : false}
-              animate={{ opacity: 1, x: 0 }}
+              initial={animate ? { opacity: 0, y: 4 } : false}
+              animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.2 }}
-              className="flex"
+              className="flex overflow-hidden"
             >
               <span className="select-none text-slate-600 mr-4 w-6 text-right">{i + 1}</span>
               <span className="flex-1">{highlight(line) || "\u00A0"}</span>

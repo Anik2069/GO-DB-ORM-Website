@@ -148,7 +148,7 @@ export function DocsPreview() {
   const current = sections[active];
 
   return (
-    <section id="docs" className="relative py-20">
+    <section id="docs" className="relative py-12">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-10 sm:mb-12 px-4">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full glass text-[10px] sm:text-xs text-muted-foreground mb-4">
@@ -200,11 +200,11 @@ export function DocsPreview() {
             <AnimatePresence mode="wait">
               <motion.div
                 key={active}
-                initial={{ opacity: 0, x: 10 }}
-                animate={{ opacity: 1, x: 0 }}
-                exit={{ opacity: 0, x: -10 }}
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -10 }}
                 transition={{ duration: 0.2 }}
-                className="h-full flex flex-col"
+                className="h-full flex flex-col overflow-hidden"
               >
                 <div className="flex items-center justify-between mb-6">
                   <h3 className="text-xl sm:text-2xl font-bold">{active}</h3>

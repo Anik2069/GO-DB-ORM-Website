@@ -24,26 +24,24 @@ export function Navbar() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? "py-3" : "py-5"
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 w-screen overflow-x-hidden ${
+        scrolled ? "py-2 sm:py-3" : "py-4 sm:py-5"
       }`}
     >
       <div
-        className={`mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 transition-all ${
-          scrolled ? "" : ""
-        }`}
+        className="mx-auto max-w-7xl px-3 sm:px-6 lg:px-8"
       >
         <div
-          className={`flex items-center justify-between rounded-2xl px-4 sm:px-6 py-3 transition-all ${
+          className={`flex items-center justify-between rounded-xl sm:rounded-2xl px-3 sm:px-6 py-2 sm:py-3 transition-all ${
             scrolled ? "glass" : ""
           }`}
         >
-          <a href="#top" className="flex items-center gap-2 group">
+          <a href="#top" className="flex items-center gap-2 group shrink-0">
             <div className="relative">
               <Database className="h-5 w-5 sm:h-7 sm:w-7 text-primary" />
               <div className="absolute inset-0 blur-md bg-primary/40 group-hover:bg-primary/60 transition" />
             </div>
-            <span className="font-semibold tracking-tight text-base sm:text-lg">
+            <span className="font-bold tracking-tight text-[15px] sm:text-lg whitespace-nowrap">
               Go DB <span className="text-gradient">ORM</span>
             </span>
           </a>

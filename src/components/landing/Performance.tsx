@@ -20,7 +20,7 @@ const data = [
 
 export function Performance() {
   return (
-    <section className="relative py-20">
+    <section className="relative py-12">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-12 sm:mb-16 px-4">
           <h2 className="text-3xl sm:text-5xl font-bold tracking-tight">
