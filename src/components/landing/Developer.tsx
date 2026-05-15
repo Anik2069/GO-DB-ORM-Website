@@ -15,7 +15,7 @@ export function Developer() {
   };
 
   return (
-    <section id="developer" className="relative py-32 overflow-hidden bg-background">
+    <section id="developer" className="relative py-20 overflow-hidden bg-background">
       {/* Background Decor */}
       <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/5 blur-[120px] rounded-full -translate-y-1/2 translate-x-1/2" />
       <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-primary/5 blur-[120px] rounded-full translate-y-1/2 -translate-x-1/2" />

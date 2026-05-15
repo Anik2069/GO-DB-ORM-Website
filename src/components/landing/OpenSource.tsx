@@ -10,7 +10,7 @@ const stats = [
 
 export function OpenSource() {
   return (
-    <section id="community" className="relative py-32">
+    <section id="community" className="relative py-20">
       <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

@@ -17,7 +17,7 @@ client.Select("name", "email").
 
 export function Hero() {
   return (
-    <section id="top" className="relative pt-32 pb-24 overflow-hidden">
+    <section id="top" className="relative pt-24 pb-16 overflow-hidden">
       {/* background grid + glow */}
       <div className="absolute inset-0 bg-grid radial-fade" />
       <div className="absolute top-20 left-1/2 -translate-x-1/2 h-[500px] w-[900px] rounded-full bg-primary/20 blur-[140px] -z-0" />
