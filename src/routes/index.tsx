@@ -15,20 +15,28 @@ import { Footer } from "@/components/landing/Footer";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Go DB ORM — Modern ORM for Golang Developers" },
+      { title: "Go DB ORM — Modern, Type-Safe Golang ORM" },
       {
         name: "description",
         content:
-          "Fast, lightweight, type-safe Go ORM with a fluent query builder, auto migrations, and first-class Postgres & MySQL support. Open source, MIT licensed.",
+          "Fast, lightweight, type-safe Go ORM with a fluent query builder, auto migrations, and first-class Postgres & MySQL support. Built for high-performance Golang applications.",
       },
-      { property: "og:title", content: "Go DB ORM — Modern ORM for Golang Developers" },
+      {
+        name: "keywords",
+        content: "golang orm, go database library, type-safe orm, postgres orm go, mysql orm go, fluent query builder, database migrations go",
+      },
+      { property: "og:title", content: "Go DB ORM — Modern, Type-Safe Golang ORM" },
       { property: "og:description", content: "Fast, lightweight, type-safe database toolkit for scalable Go applications." },
       { property: "og:type", content: "website" },
-      { property: "og:url", content: "/" },
+      { property: "og:url", content: "https://godb-orm.dev" },
+      { property: "og:image", content: "https://godb-orm.dev/og-image.png" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "Go DB ORM — Modern, Type-Safe Golang ORM" },
+      { name: "twitter:description", content: "Fast, lightweight, type-safe database toolkit for scalable Go applications." },
+      { name: "twitter:image", content: "https://godb-orm.dev/og-image.png" },
     ],
     links: [
-      { rel: "canonical", href: "/" },
+      { rel: "canonical", href: "https://godb-orm.dev" },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "" as any },
       {
@@ -36,18 +44,42 @@ export const Route = createFileRoute("/")({
         href: "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap",
       },
     ],
-    scripts: [{
-      type: "application/ld+json",
-      children: JSON.stringify({
-        "@context": "https://schema.org",
-        "@type": "SoftwareApplication",
-        name: "Go DB ORM",
-        applicationCategory: "DeveloperApplication",
-        operatingSystem: "Cross-platform",
-        offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
-        description: "Modern, type-safe ORM for Golang.",
-      }),
-    }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "SoftwareApplication",
+          "name": "Go DB ORM",
+          "alternateName": "GoDB ORM",
+          "applicationCategory": "DeveloperApplication",
+          "operatingSystem": "Cross-platform",
+          "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+          },
+          "description": "Modern, type-safe ORM for Golang. Featuring a fluent query builder and auto-migrations.",
+          "softwareVersion": "1.0.0",
+          "license": "https://opensource.org/licenses/MIT",
+          "url": "https://godb-orm.dev"
+        }),
+      },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebSite",
+          "url": "https://godb-orm.dev",
+          "name": "Go DB ORM",
+          "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://godb-orm.dev/search?q={search_term_string}",
+            "query-input": "required name=search_term_string"
+          }
+        }),
+      }
+    ],
   }),
   component: Index,
 });
