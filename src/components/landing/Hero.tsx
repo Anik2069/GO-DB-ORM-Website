@@ -29,17 +29,17 @@ export function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full glass text-xs text-muted-foreground mb-6">
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full glass text-[10px] sm:text-xs text-muted-foreground mb-6">
             <Sparkles className="h-3.5 w-3.5 text-primary" />
             v1.0 — Open source & MIT licensed
           </div>
 
-          <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.05]">
+          <h1 className="text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.05]">
             Modern ORM for{" "}
             <span className="text-gradient">Golang</span> Developers
           </h1>
 
-          <p className="mt-6 text-lg text-muted-foreground max-w-xl leading-relaxed">
+          <p className="mt-6 text-base sm:text-lg text-muted-foreground max-w-xl leading-relaxed">
             Fast, lightweight, type-safe database toolkit built for scalable Go
             applications. Fluent queries, auto migrations, zero magic.
           </p>

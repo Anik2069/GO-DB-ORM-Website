@@ -13,11 +13,11 @@ export function Architecture() {
   return (
     <section className="relative py-32">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-        <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-16">
-          <h2 className="text-4xl sm:text-5xl font-bold tracking-tight">
+        <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-12 sm:mb-16 px-4">
+          <h2 className="text-3xl sm:text-5xl font-bold tracking-tight">
             Clean <span className="text-gradient">architecture</span>
           </h2>
-          <p className="mt-4 text-muted-foreground">A predictable path from your code to the database.</p>
+          <p className="mt-4 text-sm sm:text-base text-muted-foreground">A predictable path from your code to the database.</p>
         </motion.div>
 
         <div className="relative glass rounded-3xl p-8 lg:p-12">

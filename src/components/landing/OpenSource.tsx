@@ -16,14 +16,14 @@ export function OpenSource() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="relative glass rounded-3xl p-10 lg:p-14 overflow-hidden text-center"
+          className="relative glass rounded-3xl p-8 sm:p-10 lg:p-14 overflow-hidden text-center"
         >
           <div className="absolute -top-32 left-1/2 -translate-x-1/2 h-72 w-[600px] rounded-full bg-primary/30 blur-[120px]" />
           <div className="relative">
-            <h2 className="text-4xl sm:text-5xl font-bold tracking-tight">
+            <h2 className="text-3xl sm:text-5xl font-bold tracking-tight">
               Open source, <span className="text-gradient">forever</span>
             </h2>
-            <p className="mt-4 text-muted-foreground max-w-xl mx-auto">
+            <p className="mt-4 text-sm sm:text-base text-muted-foreground max-w-xl mx-auto px-2">
               Built in the open with the Go community. MIT licensed and free to use anywhere.
             </p>
 

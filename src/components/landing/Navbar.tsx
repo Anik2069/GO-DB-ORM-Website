@@ -8,6 +8,7 @@ const links = [
   { href: "#examples", label: "Examples" },
   { href: "#docs", label: "Docs" },
   { href: "#community", label: "Community" },
+  { href: "#developer", label: "Developer" },
 ];
 
 export function Navbar() {
@@ -39,10 +40,10 @@ export function Navbar() {
         >
           <a href="#top" className="flex items-center gap-2 group">
             <div className="relative">
-              <Database className="h-7 w-7 text-primary" />
+              <Database className="h-5 w-5 sm:h-7 sm:w-7 text-primary" />
               <div className="absolute inset-0 blur-md bg-primary/40 group-hover:bg-primary/60 transition" />
             </div>
-            <span className="font-semibold tracking-tight text-lg">
+            <span className="font-semibold tracking-tight text-base sm:text-lg">
               Go DB <span className="text-gradient">ORM</span>
             </span>
           </a>

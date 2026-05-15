@@ -9,6 +9,7 @@ import { Performance } from "@/components/landing/Performance";
 import { OpenSource } from "@/components/landing/OpenSource";
 import { DocsPreview } from "@/components/landing/DocsPreview";
 import { Testimonials } from "@/components/landing/Testimonials";
+import { Developer } from "@/components/landing/Developer";
 import { Footer } from "@/components/landing/Footer";
 
 export const Route = createFileRoute("/")({
@@ -62,6 +63,7 @@ function Index() {
       <Architecture />
       <Performance />
       <OpenSource />
+      <Developer />
       <DocsPreview />
       <Testimonials />
       <Footer />

@@ -24,15 +24,15 @@ export function Features() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="max-w-2xl mx-auto text-center mb-16"
+          className="max-w-2xl mx-auto text-center mb-12 sm:mb-16"
         >
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full glass text-xs text-muted-foreground mb-4">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full glass text-[10px] sm:text-xs text-muted-foreground mb-4">
             <Gauge className="h-3.5 w-3.5 text-primary" /> Built for speed
           </div>
-          <h2 className="text-4xl sm:text-5xl font-bold tracking-tight">
+          <h2 className="text-3xl sm:text-5xl font-bold tracking-tight">
             Everything you need to ship <span className="text-gradient">faster</span>
           </h2>
-          <p className="mt-4 text-muted-foreground">
+          <p className="mt-4 text-sm sm:text-base text-muted-foreground px-4">
             A complete database toolkit that gets out of your way.
           </p>
         </motion.div>

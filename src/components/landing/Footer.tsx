@@ -15,6 +15,7 @@ const cols = [
     { label: "Discord", href: "#" },
     { label: "Discussions", href: "https://github.com/Anik2069/go-db-orm/discussions" },
     { label: "Contribute", href: "https://github.com/Anik2069/go-db-orm" },
+    { label: "Developer", href: "https://github.com/Anik2069" },
   ]},
 ];
 
@@ -22,7 +23,7 @@ export function Footer() {
   return (
     <footer className="relative border-t border-white/5 mt-12">
       <div className="absolute inset-x-0 -top-px h-px bg-gradient-to-r from-transparent via-primary/40 to-transparent" />
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 grid lg:grid-cols-4 gap-10">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 grid grid-cols-2 lg:grid-cols-4 gap-10">
         <div>
           <a href="#top" className="flex items-center gap-2">
             <Database className="h-6 w-6 text-primary" />

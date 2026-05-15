@@ -22,14 +22,14 @@ export function Performance() {
   return (
     <section className="relative py-32">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-        <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-16">
-          <h2 className="text-4xl sm:text-5xl font-bold tracking-tight">
+        <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-12 sm:mb-16 px-4">
+          <h2 className="text-3xl sm:text-5xl font-bold tracking-tight">
             Built for <span className="text-gradient">performance</span>
           </h2>
-          <p className="mt-4 text-muted-foreground">Numbers from internal benchmarks on Postgres 15, M2 Pro.</p>
+          <p className="mt-4 text-sm sm:text-base text-muted-foreground">Numbers from internal benchmarks on Postgres 15, M2 Pro.</p>
         </motion.div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-10">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-10">
           {stats.map((s, i) => (
             <motion.div
               key={s.label}

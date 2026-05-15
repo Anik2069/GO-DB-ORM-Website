@@ -19,8 +19,8 @@ export function Testimonials() {
   return (
     <section className="relative py-32">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-        <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-12">
-          <h2 className="text-4xl sm:text-5xl font-bold tracking-tight">
+        <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-10 sm:mb-12">
+          <h2 className="text-3xl sm:text-5xl font-bold tracking-tight">
             Loved by <span className="text-gradient">developers</span>
           </h2>
         </motion.div>

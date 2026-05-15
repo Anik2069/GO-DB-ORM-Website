@@ -57,11 +57,11 @@ export function Examples() {
   return (
     <section id="examples" className="relative py-32">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-        <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-12">
-          <h2 className="text-4xl sm:text-5xl font-bold tracking-tight">
+        <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-12 px-4">
+          <h2 className="text-3xl sm:text-5xl font-bold tracking-tight">
             Code that <span className="text-gradient">reads itself</span>
           </h2>
-          <p className="mt-4 text-muted-foreground">Common operations in a few fluent lines.</p>
+          <p className="mt-4 text-sm sm:text-base text-muted-foreground">Common operations in a few fluent lines.</p>
         </motion.div>
 
         <div className="flex flex-wrap justify-center gap-2 mb-6">

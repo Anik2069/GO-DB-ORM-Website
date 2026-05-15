@@ -67,11 +67,11 @@ export function DocsPreview() {
   return (
     <section id="docs" className="relative py-32">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-        <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-12">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full glass text-xs text-muted-foreground mb-4">
+        <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-10 sm:mb-12 px-4">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full glass text-[10px] sm:text-xs text-muted-foreground mb-4">
             <Book className="h-3.5 w-3.5 text-primary" /> Documentation
           </div>
-          <h2 className="text-4xl sm:text-5xl font-bold tracking-tight">
+          <h2 className="text-3xl sm:text-5xl font-bold tracking-tight">
             Docs you'll actually <span className="text-gradient">read</span>
           </h2>
         </motion.div>

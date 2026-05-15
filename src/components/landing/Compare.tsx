@@ -25,11 +25,11 @@ export function Compare() {
     <section id="compare" className="relative py-32">
       <div className="absolute inset-x-0 top-1/2 -translate-y-1/2 h-[400px] bg-gradient-to-r from-primary/10 via-secondary/10 to-transparent blur-3xl -z-10" />
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-        <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-12">
-          <h2 className="text-4xl sm:text-5xl font-bold tracking-tight">
+        <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-8 sm:mb-12">
+          <h2 className="text-3xl sm:text-5xl font-bold tracking-tight">
             Why choose <span className="text-gradient">Go DB ORM</span>
           </h2>
-          <p className="mt-4 text-muted-foreground">Honest comparison with what you might be using today.</p>
+          <p className="mt-4 text-sm sm:text-base text-muted-foreground px-4">Honest comparison with what you might be using today.</p>
         </motion.div>
 
         <motion.div
